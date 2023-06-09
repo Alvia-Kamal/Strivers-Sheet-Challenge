@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution {
+	public static ArrayList<ArrayList<Long>> printPascal(int n) {
+                ArrayList<ArrayList<Long>> list=new ArrayList<ArrayList<Long>>();
+				for(int i=1;i<=n;i++){
+					list.add(new ArrayList<Long>(nCr(i)));
+				}
+				return list;
+	}
+	public static ArrayList<Long> nCr(int n){
+		ArrayList<Long> ans=new ArrayList<>();
+		long res=1;
+		for(int i=1;i<=n;i++){
+			ans.add(res);
+			res=res*(n-i)/i;
+			//res=res/(i+1);
+					
+					}
+					return ans;
+
+	} 
+}
