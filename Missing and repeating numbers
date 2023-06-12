@@ -1,0 +1,27 @@
+import java.util.* ;
+import java.io.*; 
+import java.util.ArrayList;
+
+public class Solution {
+
+    public static int[] missingAndRepeating(ArrayList<Integer> arr, int n) {
+        int check[]=new int[arr.size()];
+        int r=0,m=0;
+        for(int i:arr){
+            if(check[i-1]==1)
+            {
+                r=i;
+            }
+            check[i-1]++;
+        }
+        for(int i=0;i<n;i++){
+            if(check[i]==0)
+            {
+                m=i+1;
+                break;
+            }
+        }
+        int[] ans={m,r};
+        return ans;
+    }
+}
