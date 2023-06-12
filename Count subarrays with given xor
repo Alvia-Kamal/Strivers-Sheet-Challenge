@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution {
+	public static int subarraysXor(ArrayList<Integer> arr, int x) {
+		 int xorr=0,count=0;
+		 HashMap<Integer,Integer> map=new HashMap<>();
+		 map.put(0,1);
+		 for(int i=0;i<arr.size();i++){
+			 xorr^=arr.get(i);
+			 
+			 count+=map.getOrDefault(x^xorr,0);
+			 
+			 map.put(xorr,map.getOrDefault(xorr,0)+1);
+
+
+		 }
+		 return count;		 
+	}
+}
